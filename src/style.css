@@ -1,25 +1,92 @@
-
-
-#content{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Flame-Regular',sans-serif;
+}
+@font-face {
+    font-family: "Flame-Regular";
+    src: url('fonts/Flame-Regular.ttf');
+}
+header{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    background-color: #f5ebdc;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    flex: 0.7;
+    padding: calc(24rem/16);
+}
+button {
+    background: none;
+    border: none;
+    color: #502314;
+    font-size: calc(25rem/16);
+    cursor: pointer;
+    margin: 0 4rem;
+}
+button.cart,.left-order>button{
+    background-color: #d62300;
+    color: #f5ebdc;
+    /* border: calc(4rem/16) solid ; */
+    border-radius: calc((25rem/16));
+    padding: calc(12rem/16);
+}
+.imagesContainer{
+    display: flex;
+    justify-content: center;
+    background-color: #ffaa00;
+    padding: calc(20rem/16) 0rem;
+}
+.slides img{
+    border-radius: calc(25rem/16);
+    
+}
+.orderSection{
+    display: flex;
+    justify-content: center;
+    background-color: #f5ebdc;
+    padding: calc(20rem/16);
+}
+.left-order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(15rem/16);
+}
+.left-order>p{
+    font-size: calc(50rem/16);
+    color: #502314;
+}
+.left-order>button{
+    padding: calc(12rem/16) calc(40rem/16);
+    
+}
+.left-order>button:last-child{
+    padding: calc(12rem/16) calc(30rem/16);
+    background-color: #f5ebdc;
+    border: calc(3rem/16) solid #d62300;
+    color: #d62300;
 }
 
-.subtitle{
-    
-    font-size: 30px;
+.misc{
+    background-color: #f5ebdc;
+    display: grid;
+   
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1fr;
 }
-img{
-    min-width: 500px;
-    min-height: 500px;
+.appImg{
+    padding: 100px;
+    grid-row: 1/3;
 }
-.subtext{
-    font-size: 30px;
+.couponImg{
+
 }
-body {
-    cursor: url('img/dryage.png'), auto;
-    
-  }
+.recruitImg{
+    grid-row: 2/2;
+    grid-column: 2/3;
+}

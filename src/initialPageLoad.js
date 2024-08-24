@@ -1,45 +1,71 @@
-
-import dryage from "./img/dryage.png";
+import burgerking1 from './img/burgerking1.jpg';
+import burgergif from './img/burgergif.gif';
+import burgerCoupon from './img/burgerCoupon.png';
+import burgerApp from './img/burgerApp.png';
+import burgerRecruit from './img/burgerRecruit.png'; 
 export default function createFrontPage(){
     const contentDiv = document.getElementById("content");
-    const titleDiv = document.createElement('div');
-    titleDiv.textContent="David's Dry Aged Meats";
-    contentDiv.appendChild(titleDiv);
+    const header= document.querySelector("header");
 
-    const subTitleSpan = document.createElement('span');
-    subTitleSpan.classList.add("subtitle");
-    subTitleSpan.textContent="Food so ddam good";
-    contentDiv.append(subTitleSpan);
-
-    const frontImg = new Image(100,200);
-    frontImg.src = dryage;
-    contentDiv.appendChild(frontImg);
-
-    const subText = document.createElement('span');
-    subText.textContent = "Our meats are so dry but is sure to get your mouth watering";
-    subText.classList.add('subtext');
-    contentDiv.appendChild(subText);
-
-    const hours = document.createElement("ul");
-    const hoursList ={
-        Monday : '9:00 am - 6:00 pm',
-        Tuesday : 'Closed',
-        Wednesday : '9:00 am - 6:00 pm',
-        Thursday : '9:00 am - 6:00 pm',
-        Friday : '9:00 am - 6:00 pm',
-        Saturday : '9:00 am - 6:00 pm',
-        Sunday : '9:00 am - 6:00 pm',
-    }
-        for(const days in hoursList){
-            console.log(days)
-            const day = document.createElement("li");
-            day.textContent=days +" "+ hoursList[days];
-            hours.appendChild(day);
-        }
-            
-        
     
-    contentDiv.appendChild(hours)
 
-    console.log("createFrontPage");
+    const imagesDiv = document.createElement("div");
+
+    imagesDiv.classList.add("imagesContainer")
+
+    const imageSlides = document.createElement("div");
+    imageSlides.classList.add('slides');
+    const img1 = document.createElement("img");
+    img1.src =burgerking1;
+    img1.width="1050";
+    img1.height="450";
+    imageSlides.appendChild(img1)
+
+
+    imagesDiv.appendChild(imageSlides);
+    contentDiv.appendChild(imagesDiv);
+
+    const startOrderSection = document.createElement("div");
+    startOrderSection.classList.add("orderSection");
+    const order = document.createElement("div");
+    order.classList.add("left-order")
+    const orderText = document.createElement("p");
+    orderText.textContent="Start your BK order"
+    const pickUpBtn = document.createElement("button");
+    pickUpBtn.textContent="Order Pickup";
+    const deliveryBtn = document.createElement("button");
+    deliveryBtn.textContent="Order Delivery";
+
+    order.appendChild(orderText);
+    order.appendChild(pickUpBtn);
+    order.appendChild(deliveryBtn);
+
+    const orderGif = document.createElement("img");
+    orderGif.src= burgergif;
+    
+
+    startOrderSection.append(order);
+    startOrderSection.append(orderGif);
+    contentDiv.appendChild(startOrderSection);
+
+
+    const miscSection = document.createElement("div");
+    miscSection.classList.add("misc");
+
+    const app = document.createElement("img");
+    app.classList.add("appImg");
+    app.src=burgerApp;
+
+    const coupon = document.createElement("img");
+    coupon.classList.add("couponImg");
+    coupon.src=burgerCoupon;
+    const recruit = document.createElement("img");
+    recruit.classList.add('recruitImg');
+    recruit.src=burgerRecruit;
+
+    miscSection.appendChild(app);
+    miscSection.appendChild(coupon);
+    miscSection.appendChild(recruit);
+    contentDiv.appendChild(miscSection);
+
 }

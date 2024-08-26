@@ -8,17 +8,23 @@
     font-family: "Flame-Regular";
     src: url('fonts/Flame-Regular.ttf');
 }
+
 header{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f5ebdc;
+    position: fixed; 
+    z-index: 1000;
+    width: 100%;
 }
 nav{
+    
     display: flex;
     justify-content: center;
     flex: 0.7;
     padding: calc(24rem/16);
+    
 }
 button {
     background: none;
@@ -35,16 +41,60 @@ button.cart,.left-order>button{
     border-radius: calc((25rem/16));
     padding: calc(12rem/16);
 }
+#content{
+    padding-top: 78px;
+}
 .imagesContainer{
+    background-color: #ffaa00;
+}
+.imagesInnerContainer{
+    display: flex;
+    justify-content: center; 
+    background-color: inherit;
+    padding: calc(20rem/16) 0rem;
+    width: 100%;
+    height: 490px;
+    position: relative;
+}
+.slides{
+    position: relative;
     display: flex;
     justify-content: center;
-    background-color: #ffaa00;
-    padding: calc(20rem/16) 0rem;
-}
-.slides img{
-    border-radius: calc(25rem/16);
+    width: 1050px;
+    height: 450px;
+    min-width: 400px;
+   
+    position: relative;
     
 }
+.slideImage{
+    border-radius: calc(25rem/16);
+    width: 100%;
+    height: 100%;
+    
+    
+    position: absolute;
+    opacity: 0;
+    
+    
+}
+.leftBtn{
+   margin-right: 10px;
+}
+.rightBtn{
+   
+}
+
+.slideImage.active{
+    opacity: 1;
+}
+.sliderButtonContainer{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding-bottom: 40px;
+}
+
 .orderSection{
     display: flex;
     justify-content: center;
@@ -58,7 +108,7 @@ button.cart,.left-order>button{
     gap: calc(15rem/16);
 }
 .left-order>p{
-    font-size: calc(50rem/16);
+    font-size: calc(60rem/16);
     color: #502314;
 }
 .left-order>button{
@@ -74,19 +124,37 @@ button.cart,.left-order>button{
 
 .misc{
     background-color: #f5ebdc;
-    display: grid;
-   
-    grid-template-columns: 1.3fr 0.7fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+.rightDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.leftDiv{
+    height: 381px
 }
 .appImg{
-    padding: 100px;
-    grid-row: 1/3;
+   
+    height: 100%;
+    
 }
-.couponImg{
+
+.couponImg,.recruitImg{
+    width: calc(400rem/16);
 
 }
-.recruitImg{
-    grid-row: 2/2;
-    grid-column: 2/3;
+
+footer{
+    background-color: #502314;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    height: 55px;
 }
+
